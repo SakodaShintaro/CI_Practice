@@ -1,0 +1,29 @@
+name: format
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+          ref: ${{ github.head_ref }}
+
+    - name: install tools
+      run: |
+        sudo apt update
+        sudo apt install clang-format
+
+    - name: apply_formatter
+      run: |
+        clang-format -i $(find . -name "*.h" -or -name "*cc")
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Apply clang-format
