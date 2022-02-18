@@ -1,3 +1,25 @@
 #include <iostream>
 
-int main() { std::cout << "CI_Practice" << std::endl; }
+int main() { 
+    
+    // あえてぐちゃぐちゃな状態でコミット
+    
+    
+    
+    
+    std::cout 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    << "CI_Practice"
+    
+    
+    
+    
+     << std::endl; }
