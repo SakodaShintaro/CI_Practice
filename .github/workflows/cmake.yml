@@ -37,4 +37,7 @@ jobs:
 
     - name: apply_clang-tidy
       run: |
+        ls
+        pwd
+        ls ${{github.workspace}}/build
         clang-tidy $(find . -name "*.h" -or -name "*cc") -p ${{github.workspace}}/build
